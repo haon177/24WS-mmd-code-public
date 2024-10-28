@@ -112,7 +112,7 @@ def fast_centered_cosine_sim(utility_matrix, vector, axis=0):
         
     # nan-> 0
     vector.data = np.nan_to_num(vector.data)
-    means = np.nanmean(utility_matrix.todense(), axis = 0)
+    utility_matrix.data = np.nan_to_num(utility_matrix.data)
     
     nnz = vector.nnz
     # when vector empty, set mean to 0
@@ -141,7 +141,7 @@ def fast_centered_cosine_sim(utility_matrix, vector, axis=0):
     utility_matrix = utility_matrix.multiply(1/vector_norm)
     return utility_matrix.todense().flatten()
 
-# Testing the functions 
+# Testing the functions
 class TestCenteredCosineSimilarity(unittest.TestCase):
     
     def setUp(self):
