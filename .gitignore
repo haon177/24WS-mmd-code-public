@@ -1,0 +1,12 @@
+*.synctex.gz
+*.aux
+*.html
+*.txt
+*.json
+*.exe
+*.dvi
+*.pdf
+*.log
+/format
+**/content/
+**__pycache__/
